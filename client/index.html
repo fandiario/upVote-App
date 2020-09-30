@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div class="container" @click.prevent="fetchData" v-if="currentPage == 'home'">
+      <div class="column">
+        <div class="col-5 mx-auto">
+          <h2>{{ message }}</h2><br>
+          <button type="button" class="btn btn-primary">Click to Enter</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card mb-3 mx-auto my-5" style="max-width: 720px;" v-else-if="currentPage == 'dashboard'" v-for="submission in sortedSubmissions" :key="submission.id">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="https://image.flaticon.com/icons/png/512/216/216221.png" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ submission.title }}<img src="./src/chevron-up.svg" class="ml-2" :alt="submission.title"><small>{{ submission.votes }}</small></h5>
+            <p class="card-text">{{ submission.description }}</p>
+            <p class="card-text"><small class="text-muted">Submitted by:</small><img src="./src/user.svg" class="ml-2" alt="">User</p>
+            <button type="button" class="btn btn-primary" @click.prevent="upvote(submission.id)">Upvote</button>
+            <button type="button" class="btn btn-danger mr-3" @click.prevent="downvote(submission.id)">Downvote</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+       
+
+    <!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- <script src="../server/seed.json"></script> -->
+<script src="./main.js"></script>
+</body>
+</html>

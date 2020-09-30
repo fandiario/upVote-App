@@ -1,0 +1,32 @@
+{
+  "submissions": [
+    {
+      "id": 1,
+      "title": "Yellow Pail",
+      "description": "On-site constructor and heavy machinery.",
+      "url": "#",
+      "votes": 21
+    },
+    {
+      "id": 2,
+      "title": "Tin Foil Hat",
+      "description": "Software developer and IT engineering.",
+      "url": "#",
+      "votes": 18
+    },
+    {
+      "id": 3,
+      "title": "White Jacket",
+      "description": "Lawyer and Legal Aid Institute.",
+      "url": "#",
+      "votes": 16
+    },
+    {
+      "id": 4,
+      "title": "Ivory Glove",
+      "description": "Dentist, Orthodentist and Oral Surgeon",
+      "url": "#",
+      "votes": 19
+    }
+  ]
+}
